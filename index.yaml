@@ -1,0 +1,32 @@
+apiVersion: v1
+entries:
+  homebox:
+  - annotations:
+      artifacthub.io/alternativeName: homebox-helm
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: HomeBox website
+          url: https://homebox.software/
+        - name: HomeBox sources
+          url: https://github.com/sysadminsmedia/homebox
+      artifacthub.io/maintainers: |
+        - name: Hugo CHUPIN
+          email: hugo@chupin.xyz
+    apiVersion: v2
+    appVersion: 0.19.0
+    created: "2025-06-19T17:08:14.667090722Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 16.7.4
+    description: A Helm chart for HomeBox, the inventory and organization system built
+      for the Home User.
+    digest: d4c188c075a25337c2e7eaaab6d99061b993d9f84524cf343b0b97235cc6c344
+    icon: https://avatars.githubusercontent.com/u/151488376
+    name: homebox
+    type: application
+    urls:
+    - https://github.com/ByTheHugo/homebox-helm/releases/download/homebox-0.1.0/homebox-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-06-19T17:08:14.667102314Z"
