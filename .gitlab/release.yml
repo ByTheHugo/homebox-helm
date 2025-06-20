@@ -23,6 +23,7 @@ publish:helm:
     - git add *.tgz index.yaml
     - git commit -m "Updated GitHub pages with latest release $CI_COMMIT_TAG"
     - git push github gh-pages
+  retry: 1
   artifacts:
     paths:
       - "*.tgz"
