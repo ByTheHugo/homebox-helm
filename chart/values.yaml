@@ -64,6 +64,10 @@ env:
   HBOX_LABEL_MAKER_DYNAMIC_LENGTH: true
   HBOX_LABEL_MAKER_ADDITIONAL_INFORMATION: ""
 
+  HBOX_THUMBNAIL_ENABLED: true # enable thumbnail generation for images, supports PNG, JPEG, AVIF, WEBP, GIF file types
+  HBOX_THUMBNAIL_WIDTH: 500	# width for generated thumbnails in pixels
+  HBOX_THUMBNAIL_HEIGHT: 500
+
 # This define the PostgreSQL server configuration that will be deployed using Helm subchart.
 # Set the .enabled key to false to use an external PostgreSQL server.
 # For more information checkout: https://artifacthub.io/packages/helm/bitnami/postgresql
