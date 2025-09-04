@@ -45,6 +45,30 @@ spec:
           envFrom:
             - secretRef:
                 name: {{ include "homebox.fullname" . }}
+          {{- if and (eq .Values.env.HBOX_DATABASE_DRIVER "postgres") (not .Values.postgresql.enabled) }}
+          env:
+            {{- if and .Values.externalPostgresql.auth.username (kindIs "map" .Values.externalPostgresql.auth.username) }}
+            - name: HBOX_DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.externalPostgresql.auth.username.existingSecret }}
+                  key: {{ .Values.externalPostgresql.auth.username.existingSecretKey }}
+            {{- end }}
+            {{- if and .Values.externalPostgresql.auth.password (kindIs "map" .Values.externalPostgresql.auth.password) }}
+            - name: HBOX_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.externalPostgresql.auth.password.existingSecret }}
+                  key: {{ .Values.externalPostgresql.auth.password.existingSecretKey }}
+            {{- end }}
+            {{- if and .Values.externalPostgresql.auth.database (kindIs "map" .Values.externalPostgresql.auth.database) }}
+            - name: HBOX_DATABASE_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.externalPostgresql.auth.database.existingSecret }}
+                  key: {{ .Values.externalPostgresql.auth.database.existingSecretKey }}
+            {{- end }}
+          {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

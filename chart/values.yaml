@@ -88,9 +88,21 @@ externalPostgresql:
   host: postgres
   port: 5432
   auth:
-    username: external-homebox-user
-    password: external-homebox-password
-    database: external-homebox-db
+    # You can use string values:
+    # username: external-homebox-user
+    # password: external-homebox-password
+    # database: external-homebox-db
+    
+    # Or reference existing secrets:
+    # username:
+    #   existingSecret: ""
+    #   existingSecretKey: "username"
+    # password:
+    #   existingSecret: ""
+    #   existingSecretKey: "password"
+    # database:
+    #   existingSecret: ""
+    #   existingSecretKey: "database"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
