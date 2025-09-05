@@ -13,6 +13,34 @@ entries:
         - name: Hugo CHUPIN
           email: hugo@chupin.xyz
     apiVersion: v2
+    appVersion: 0.21.0
+    created: "2025-09-05T15:35:12.153692007Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 16.7.27
+    description: A Helm chart for HomeBox, the inventory and organization system built
+      for the Home User.
+    digest: 036de1b530fe08099e31425471ac383575f4ee26f587c3cf7916de717ddb5684
+    icon: https://raw.githubusercontent.com/sysadminsmedia/homebox/refs/heads/main/docs/public/lilbox.svg
+    name: homebox
+    type: application
+    urls:
+    - https://github.com/ByTheHugo/homebox-helm/releases/download/homebox-0.2.0/homebox-0.2.0.tgz
+    version: 0.2.0
+  - annotations:
+      artifacthub.io/alternativeName: homebox-helm
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: HomeBox website
+          url: https://homebox.software/
+        - name: HomeBox sources
+          url: https://github.com/sysadminsmedia/homebox
+      artifacthub.io/maintainers: |
+        - name: Hugo CHUPIN
+          email: hugo@chupin.xyz
+    apiVersion: v2
     appVersion: 0.20.2
     created: "2025-07-08T18:05:10.333003121Z"
     dependencies:
@@ -85,4 +113,4 @@ entries:
     urls:
     - https://github.com/ByTheHugo/homebox-helm/releases/download/homebox-0.1.0/homebox-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-08T18:05:10.333030144Z"
+generated: "2025-09-05T15:35:12.153739937Z"
